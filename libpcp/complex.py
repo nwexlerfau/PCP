@@ -144,15 +144,19 @@ def exercise_polynomial(show_result=True):
         """
         poly_root = np.roots(p)
         ax.scatter(np.real(poly_root), np.imag(poly_root), color='red')
+        # ax means draw these points on these partigular plot
         ax.grid()
         ax.set_title(title)
         ax.set_xlabel('$\mathrm{Re}$')
         ax.set_ylabel('$\mathrm{Im}$')
 
-    fig, ax = plt.subplots(2, 3, figsize=(10, 6))
+    fig, ax = plt.subplots(2, 3, figsize=(10, 6)) # fig is the whole figure w/ 6 plots
+    # ax is a collection of 6 individual Axes objects (an Axes is one plotting area, including
+    # x-, y-axis, title, and plotted points)
 
     p = np.array([1, 0, -2])
     vis_root(p, ax[0, 0], title='$p(z)=z^2-2$')
+    # ax[0, 0] selects the plot in row 0, column 0
 
     p = np.array([1, 0, 2])
     vis_root(p, ax[0, 1], title='$p(z)=z^2+2$')
